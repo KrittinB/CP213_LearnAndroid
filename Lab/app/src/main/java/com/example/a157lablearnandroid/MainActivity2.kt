@@ -1,17 +1,15 @@
-package com.example.a157lablearnandroid
+package com.example.a527lablearnandroid
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.a157lablearnandroid.ui.theme._157LabLearnAndroidTheme
+import com.example.a527lablearnandroid.ui.theme._157LabLearnAndroidTheme
 
 class MainActivity2 : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,10 +30,22 @@ class MainActivity2 : ComponentActivity() {
 
 @Composable
 fun Greeting2(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+    var inputText by remember { mutableStateOf("") }
+
+    Column {
+        Text(
+            text = "Hello $name! say = "+inputText,
+            modifier = modifier
+        )
+
+        TextField(
+            value = inputText,
+            onValueChange = {
+                inputText = it
+            }
+
+        )
+    }
 }
 
 @Preview(showBackground = true)
