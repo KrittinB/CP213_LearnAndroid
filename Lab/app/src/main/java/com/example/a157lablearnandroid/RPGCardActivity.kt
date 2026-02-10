@@ -31,7 +31,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-class MainActivity : ComponentActivity() {
+class RPGCardActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -73,7 +73,7 @@ class MainActivity : ComponentActivity() {
                     .align(Alignment.CenterHorizontally)
                     .padding(top = 16.dp, bottom = 32.dp)
                     .clickable {
-                        context.startActivity(Intent(context, PokedexActivity::class.java))
+                        context.startActivity(Intent(context, LifeCycleComposeActivity::class.java))
                     }
             )
 

@@ -15,17 +15,28 @@
         android:theme="@style/Theme._157LabLearnAndroid"
         tools:targetApi="31">
         <activity
+            android:name=".ManuActivity"
+            android:exported="true"
+            android:label="@string/title_activity_manu"
+            android:theme="@style/Theme._157LabLearnAndroid" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".PokedexActivity"
             android:exported="true"
             android:label="@string/title_activity_pokedex"
             android:theme="@style/Theme._157LabLearnAndroid" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".LifeCycleComposeActivity"
             android:exported="false"
             android:label="@string/title_activity_main2"
             android:theme="@style/Theme._157LabLearnAndroid" />
         <activity
-            android:name=".MainActivity"
+            android:name=".RPGCardActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme._157LabLearnAndroid">
