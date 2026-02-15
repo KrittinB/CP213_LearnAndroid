@@ -12,7 +12,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import kotlin.jvm.java
+import architecture.MVVM.MvvmCounterActivity
 
 class MenuActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +34,11 @@ class MenuActivity : ComponentActivity() {
                     startActivity(Intent(this@MenuActivity, LifeCycleComposeActivity::class.java))
                 }) {
                     Text("LifeCycleComposeActivity")
+                }
+                Button(onClick = {
+                    startActivity(Intent(this@MenuActivity, MvvmCounterActivity::class.java))
+                }) {
+                    Text("MvvmCounterActivity")
                 }
             }
         }

@@ -73,7 +73,7 @@ class RPGCardActivity : ComponentActivity() {
                     .align(Alignment.CenterHorizontally)
                     .padding(top = 16.dp, bottom = 32.dp)
                     .clickable {
-                        context.startActivity(Intent(context, LifeCycleComposeActivity::class.java))
+                        context.startActivity(Intent(this@RPGCardActivity, LifeCycleComposeActivity::class.java))
                     }
             )
 
