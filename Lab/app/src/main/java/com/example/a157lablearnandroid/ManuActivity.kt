@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import architecture.MVVM.MvvmCounterActivity
+import com.example.a157lablearnandroid.utiles.SharedPreferencesUtil
 
 class MenuActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,6 +40,11 @@ class MenuActivity : ComponentActivity() {
                     startActivity(Intent(this@MenuActivity, MvvmCounterActivity::class.java))
                 }) {
                     Text("MvvmCounterActivity")
+                }
+                Button(onClick = {
+                    startActivity(Intent(this@MenuActivity, SharedPreferencesActivity::class.java))
+                }) {
+                    Text("SharedPreferencesActivity")
                 }
             }
         }

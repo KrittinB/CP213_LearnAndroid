@@ -4,4 +4,6 @@
     <string name="title_activity_pokedex">PokedexActivity</string>
     <string name="title_activity_manu">ManuActivity</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_shared_preferences_utiles">SharedPreferencesUtiles</string>
+    <string name="title_activity_shared_preferences">SharedPreferencesActivity</string>
 </resources>

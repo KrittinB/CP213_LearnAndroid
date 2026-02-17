@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.intent.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,47 +13,55 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme._157LabLearnAndroid"
-        tools:targetApi="31" >
-        <activity
-            android:name="architecture.MainActivity"
-            android:exported="false"
-            android:label="@string/title_activity_main"
-            android:theme="@style/Theme._157LabLearnAndroid" />
+        tools:targetApi="31">
+
+        <!-- MenuActivity is the main entry point (Checked from file name MenuActivity.kt) -->
         <activity
             android:name=".MenuActivity"
             android:exported="true"
             android:label="@string/title_activity_manu"
-            android:theme="@style/Theme._157LabLearnAndroid" >
+            android:theme="@style/Theme._157LabLearnAndroid">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".SharedPreferencesActivity"
+            android:exported="false"
+            android:label="@string/title_activity_shared_preferences"
+            android:theme="@style/Theme._157LabLearnAndroid" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme._157LabLearnAndroid" />
+
         <activity
             android:name="architecture.MVVM.MvvmCounterActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="MVVM Counter" />
+
         <activity
             android:name=".PokedexActivity"
-            android:exported="true"
+            android:exported="false"
             android:label="@string/title_activity_pokedex"
             android:theme="@style/Theme._157LabLearnAndroid" />
+
         <activity
             android:name=".LifeCycleComposeActivity"
             android:exported="false"
             android:label="@string/title_activity_main2"
             android:theme="@style/Theme._157LabLearnAndroid" />
+
         <activity
             android:name=".RPGCardActivity"
-            android:exported="true"
+            android:exported="false"
             android:label="@string/app_name"
-            android:theme="@style/Theme._157LabLearnAndroid" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:theme="@style/Theme._157LabLearnAndroid" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
