@@ -58,7 +58,7 @@ fun CharacterScreen() {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(40.dp)
+                .height(41.dp)
                 .background(Color.White)
         ) {
             Box(
