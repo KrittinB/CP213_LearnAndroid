@@ -96,6 +96,6 @@ val allKantoPokemon = listOf(
 
 @Preview(showBackground = true)
 @Composable
-fun ListPreview() {
+fun ListActivityPreview() {
     ListScreen()
 }

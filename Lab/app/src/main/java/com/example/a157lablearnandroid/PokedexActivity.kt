@@ -29,6 +29,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
+import com.example.a157lablearnandroid.R
 
 class PokedexActivity : ComponentActivity() {
 
@@ -39,13 +40,13 @@ class PokedexActivity : ComponentActivity() {
         Log.i("Lifecycle", "PokedexActivity : onCreate")
         enableEdgeToEdge()
         setContent {
-            ListScreen(viewModel)
+            PokedexScreen(viewModel)
         }
     }
 }
 
 @Composable
-fun ListScreen(viewModel: PokemonViewModel) {
+fun PokedexScreen(viewModel: PokemonViewModel) {
 
     val pokemonList by viewModel.pokemonList.collectAsState()
 
@@ -93,6 +94,6 @@ fun ListScreen(viewModel: PokemonViewModel) {
 
 @Preview(showBackground = true)
 @Composable
-fun ListPreview() {
-    ListScreen(PokemonViewModel())
+fun PokedexPreview() {
+    PokedexScreen(PokemonViewModel())
 }

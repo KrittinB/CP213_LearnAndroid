@@ -13,7 +13,6 @@ import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import architecture.MVVM.MvvmCounterActivity
-import com.example.a157lablearnandroid.utiles.SharedPreferencesUtil
 
 class MenuActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,31 +20,49 @@ class MenuActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
-                Button(onClick = {
-                    startActivity(Intent(this@MenuActivity, RPGCardActivity::class.java))
-                }) {
-                    Text("RPGCardActivity")
-                }
-                Button(onClick = {
-                    startActivity(Intent(this@MenuActivity, PokedexActivity::class.java))
-                }) {
-                    Text("PokedexActivity")
-                }
-                Button(onClick = {
-                    startActivity(Intent(this@MenuActivity, LifeCycleComposeActivity::class.java))
-                }) {
-                    Text("LifeCycleComposeActivity")
-                }
-                Button(onClick = {
-                    startActivity(Intent(this@MenuActivity, MvvmCounterActivity::class.java))
-                }) {
-                    Text("MvvmCounterActivity")
-                }
-                Button(onClick = {
-                    startActivity(Intent(this@MenuActivity, SharedPreferencesActivity::class.java))
-                }) {
-                    Text("SharedPreferencesActivity")
-                }
+                Button(
+                        onClick = {
+                            startActivity(Intent(this@MenuActivity, RPGCardActivity::class.java))
+                        }
+                ) { Text("RPGCardActivity") }
+                Button(
+                        onClick = {
+                            startActivity(Intent(this@MenuActivity, PokedexActivity::class.java))
+                        }
+                ) { Text("PokedexActivity") }
+                Button(
+                        onClick = {
+                            startActivity(
+                                    Intent(this@MenuActivity, LifeCycleComposeActivity::class.java)
+                            )
+                        }
+                ) { Text("LifeCycleComposeActivity") }
+                Button(
+                        onClick = {
+                            startActivity(
+                                    Intent(this@MenuActivity, MvvmCounterActivity::class.java)
+                            )
+                        }
+                ) { Text("MvvmCounterActivity") }
+                Button(
+                        onClick = {
+                            startActivity(
+                                    Intent(this@MenuActivity, SharedPreferencesActivity::class.java)
+                            )
+                        }
+                ) { Text("SharedPreferencesActivity") }
+                Button(
+                        onClick = {
+                            startActivity(
+                                    Intent(this@MenuActivity, ImagePickerActivity::class.java)
+                            )
+                        }
+                ) { Text("ImagePickerActivity") }
+                Button(
+                        onClick = {
+                            startActivity(Intent(this@MenuActivity, SensorActivity::class.java))
+                        }
+                ) { Text("SensorActivity") }
             }
         }
     }

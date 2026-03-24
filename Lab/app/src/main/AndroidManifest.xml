@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 
     <application
         android:allowBackup="true"
@@ -17,7 +21,6 @@
 
         <!-- MenuActivity is the main entry point (Checked from file name MenuActivity.kt) -->
         <activity
-<<<<<<< HEAD
             android:name=".ListActivity"
             android:exported="false"
             android:label="@string/title_activity_list"
@@ -28,10 +31,7 @@
             android:label="@string/title_activity_main2"
             android:theme="@style/Theme._157LabLearnAndroid" />
         <activity
-            android:name=".MainActivity"
-=======
             android:name=".MenuActivity"
->>>>>>> 95b93167cdca090d60796bee7a64e75e09c0a771
             android:exported="true"
             android:label="@string/title_activity_manu"
             android:theme="@style/Theme._157LabLearnAndroid">
@@ -40,6 +40,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ImagePickerActivity"
+            android:exported="false"
+            android:label="Image Picker Activity"
+            android:theme="@style/Theme._157LabLearnAndroid" />
+        <activity
+            android:name=".SensorActivity"
+            android:exported="false"
+            android:label="Sensor Activity"
+            android:theme="@style/Theme._157LabLearnAndroid" />
 
         <activity
             android:name=".SharedPreferencesActivity"

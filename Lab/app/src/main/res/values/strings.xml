@@ -1,13 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">157LabLearnAndroid</string>
     <string name="title_activity_main2">MainActivity2</string>
-<<<<<<< HEAD
     <string name="title_activity_list">ListActivity</string>
-=======
     <string name="title_activity_pokedex">PokedexActivity</string>
     <string name="title_activity_manu">ManuActivity</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_shared_preferences_utiles">SharedPreferencesUtiles</string>
     <string name="title_activity_shared_preferences">SharedPreferencesActivity</string>
->>>>>>> 95b93167cdca090d60796bee7a64e75e09c0a771
 </resources>
