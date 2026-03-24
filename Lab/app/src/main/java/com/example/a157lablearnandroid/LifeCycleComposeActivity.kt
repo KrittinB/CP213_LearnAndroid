@@ -40,7 +40,7 @@ fun LifecycleDemo(modifier: Modifier = Modifier) {
 
     Column(modifier = modifier) {
         Button(onClick = { show = !show }) {
-            Text(if (show) "Hide" else "Show")
+            Text(if (show) "Hidee" else "Show")
         }
 
         if (show) {
