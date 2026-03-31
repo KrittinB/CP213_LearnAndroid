@@ -12,7 +12,7 @@ object SharedPreferencesUtil {
     private const val PREF_NAME = "my_app_prefs"
     private var sharedPreferences: SharedPreferences? = null
 
-    // ฟังก์ชันสำหรับเตรียมการใช้งาน (ต้องเรียกครั้งเดียวใน MainActivity หรือ Application)
+    // ฟังก์ชันสำหรับเตรียมการใช้งาน (ต้องเรียกครั้งเดียวใน MainActivity หรือ Application)//
     fun init(context: Context) {
         if (sharedPreferences == null) {
             sharedPreferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
