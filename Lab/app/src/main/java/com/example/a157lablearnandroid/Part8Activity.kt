@@ -28,12 +28,12 @@ class Part8Activity : ComponentActivity() {
                 Scaffold(
                     modifier = Modifier.fillMaxSize(),
                     topBar = {
+                        @OptIn(ExperimentalMaterial3Api::class)
                         CenterAlignedTopAppBar(
                             title = { Text("Responsive Profile (Part 8)") }
                         )
                     }
                 ) { innerPadding ->
-                    // เรียกใช้งาน ProfileScreen พร้อมส่ง Padding ที่ได้จาก Scaffold
                     ProfileScreen(modifier = Modifier.padding(innerPadding))
                 }
             }
@@ -41,45 +41,61 @@ class Part8Activity : ComponentActivity() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileScreen(modifier: Modifier = Modifier) {
-    // 1. Learn Concept: ใช้ BoxWithConstraints เพื่อตรวจสอบขนาดพื้นที่หน้าจอในขณะนั้น
     BoxWithConstraints(
         modifier = modifier
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        // ตรวจสอบความกว้างสูงสุด (maxWidth)
         val isCompact = maxWidth < 600.dp
 
-        if (isCompact) {
-            // 2. จอเล็ก (Compact/Mobile): แสดงผลแบบ Column (บน-ล่าง)
-            Column(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .verticalScroll(rememberScrollState()),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Top
+        Column(modifier = Modifier.fillMaxSize()) {
+            // --- เพิ่มส่วนอธิบาย Concept ---
+            Card(
+                modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp),
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
             ) {
-                ProfileImage(modifier = Modifier.size(200.dp))
-                Spacer(modifier = Modifier.height(24.dp))
-                ProfileInfo(isCompact = true)
+                Column(modifier = Modifier.padding(16.dp)) {
+                    Text(
+                        text = "Concept: Responsive Design",
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.Bold
+                    )
+                    Text(
+                        text = "ใช้ BoxWithConstraints เพื่อตรวจสอบ maxWidth ในขณะรันไทม์ " +
+                                "หากจอแคบ (< 600dp) จะใช้ Column แต่ถ้าจอกว้างจะสลับไปใช้ Row อัตโนมัติ " +
+                                "ช่วยให้แอปแสดงผลได้สวยงามทั้งบนมือถือและแท็บเล็ต",
+                        style = MaterialTheme.typography.bodySmall
+                    )
+                }
             }
-        } else {
-            // 3. จอใหญ่ (Wide/Tablet/Landscape): แสดงผลแบบ Row (ซ้าย-ขวา)
-            Row(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(24.dp),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.Center
-            ) {
-                // แบ่งพื้นที่ฝั่งซ้ายสำหรับรูป (weight 1)
-                ProfileImage(modifier = Modifier.size(300.dp).weight(1f))
-                Spacer(modifier = Modifier.width(48.dp))
-                // แบ่งพื้นที่ฝั่งขวาสำหรับข้อมูล (weight 1)
-                ProfileInfo(modifier = Modifier.weight(1f), isCompact = false)
+            // ---------------------------
+
+            if (isCompact) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .verticalScroll(rememberScrollState()),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Top
+                ) {
+                    ProfileImage(modifier = Modifier.size(200.dp))
+                    Spacer(modifier = Modifier.height(24.dp))
+                    ProfileInfo(isCompact = true)
+                }
+            } else {
+                Row(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(16.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    ProfileImage(modifier = Modifier.size(250.dp).weight(1f))
+                    Spacer(modifier = Modifier.width(32.dp))
+                    ProfileInfo(modifier = Modifier.weight(1.5f), isCompact = false)
+                }
             }
         }
     }
@@ -87,7 +103,6 @@ fun ProfileScreen(modifier: Modifier = Modifier) {
 
 @Composable
 fun ProfileImage(modifier: Modifier = Modifier) {
-    // กล่องสมมติแทนรูปโปรไฟล์
     Box(
         modifier = modifier
             .background(Color.LightGray, RoundedCornerShape(16.dp)),
