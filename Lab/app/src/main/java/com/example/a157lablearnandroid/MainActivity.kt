@@ -15,6 +15,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -25,27 +26,19 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-
-
-            startActivity(
-                Intent(this@MainActivity, ListActivity::class.java)
-            )
-
             CharacterScreen()
-
-
-            }
+        }
     }
 }
-@Preview
 
+@Preview(showBackground = true)
 @Composable
 fun CharacterScreen() {
+    val context = LocalContext.current
 
-
-    var str by remember { mutableStateOf(8) }
-    var agi by remember { mutableStateOf(10) }
-    var intStat by remember { mutableStateOf(15) }
+    var str by remember { mutableIntStateOf(8) }
+    var agi by remember { mutableIntStateOf(10) }
+    var intStat by remember { mutableIntStateOf(15) }
 
     Column(
         modifier = Modifier
@@ -75,14 +68,12 @@ fun CharacterScreen() {
             painter = painterResource(id = R.drawable.puppy),
             contentDescription = "Profile",
             modifier = Modifier
-                .size(20.dp)
+                .size(64.dp)
                 .align(Alignment.CenterHorizontally)
                 .padding(top = 16.dp)
                 .clickable {
-                    //startActivity(Intent(this@MainActivity, ListActivity::class.java))
-
-
-
+                    val intent = Intent(context, ListActivity::class.java)
+                    context.startActivity(intent)
                 }
         )
 
@@ -93,7 +84,7 @@ fun CharacterScreen() {
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
 
-            Column {
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Button(onClick = { str++ }) {
                     Text("+", fontSize = 32.sp)
                 }
@@ -101,7 +92,7 @@ fun CharacterScreen() {
                 Text(str.toString(), fontSize = 32.sp)
             }
 
-            Column {
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Button(onClick = { agi++ }) {
                     Text("+", fontSize = 32.sp)
                 }
@@ -109,7 +100,7 @@ fun CharacterScreen() {
                 Text(agi.toString(), fontSize = 32.sp)
             }
 
-            Column {
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Button(onClick = { intStat++ }) {
                     Text("+", fontSize = 32.sp)
                 }

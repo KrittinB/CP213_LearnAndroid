@@ -8,6 +8,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
@@ -28,7 +30,23 @@ class MenuActivity : ComponentActivity() {
         Log.e("MyTag", "Error: พังแล้วจ้า (เช่น catch Exception ได้ หรือ API ร่วง)")
 
         setContent {
-            Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp)
+                    .padding(top = 32.dp)
+                    .verticalScroll(rememberScrollState())
+            ) {
+                Button(
+                        onClick = {
+                            startActivity(Intent(this@MenuActivity, MainActivity::class.java))
+                        }
+                ) { Text("MainActivity (Character Screen)") }
+                Button(
+                        onClick = {
+                            startActivity(Intent(this@MenuActivity, ListActivity::class.java))
+                        }
+                ) { Text("ListActivity") }
                 Button(
                         onClick = {
                             startActivity(Intent(this@MenuActivity, RPGCardActivity::class.java))
@@ -68,10 +86,28 @@ class MenuActivity : ComponentActivity() {
                         }
                 ) { Text("ImagePickerActivity") }
                 Button(
-                        onClick = {
-                            startActivity(Intent(this@MenuActivity, SensorActivity::class.java))
-                        }
+                    onClick = {
+                        startActivity(Intent(this@MenuActivity, SensorActivity::class.java))
+                    }
                 ) { Text("SensorActivity") }
+
+                Button(
+                    onClick = {
+                        startActivity(Intent(this@MenuActivity, Part1AnimationActivity::class.java))
+                    }
+                ) { Text("Animation Lab Part 1") }
+
+                Button(
+                    onClick = {
+                        startActivity(Intent(this@MenuActivity, Part2Activity::class.java))
+                    }
+                ) { Text("Contact List Lab (Sticky & Pagination)") }
+
+                Button(
+                    onClick = {
+                        startActivity(Intent(this@MenuActivity, Part3Activity::class.java))
+                    }
+                ) { Text("Animation Lab Part 3 (Donut Chart)") }
             }
         }
     }

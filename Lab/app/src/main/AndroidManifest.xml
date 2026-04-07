@@ -86,6 +86,24 @@
             android:label="@string/app_name"
             android:theme="@style/Theme._157LabLearnAndroid" />
 
+        <activity
+            android:name=".Part1AnimationActivity"
+            android:exported="false"
+            android:label="Animation Lab Part 1"
+            android:theme="@style/Theme._157LabLearnAndroid" />
+
+        <activity
+            android:name=".Part2Activity"
+            android:exported="false"
+            android:label="Contact List Lab (Sticky &amp; Pagination)"
+            android:theme="@style/Theme._157LabLearnAndroid" />
+
+        <activity
+            android:name=".Part3Activity"
+            android:exported="false"
+            android:label="Animation Lab Part 3 (Donut Chart)"
+            android:theme="@style/Theme._157LabLearnAndroid" />
+
     </application>
 
 </manifest>

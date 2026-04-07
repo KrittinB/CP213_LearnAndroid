@@ -79,7 +79,7 @@ fun PokedexScreen(viewModel: PokemonViewModel) {
                                         Log.d("AsyncImage", "Success loading: $imageUrl")
                                     }
                                 )
-                                .build(),
+                                 .build(),
                             contentDescription = "Sprite of ${item.pokemon_species.name}",
                             modifier = Modifier.size(64.dp),
                             placeholder = painterResource(id = R.drawable.ic_launcher_foreground),
