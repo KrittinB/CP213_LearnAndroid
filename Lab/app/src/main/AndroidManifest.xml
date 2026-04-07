@@ -104,6 +104,24 @@
             android:label="Animation Lab Part 3 (Donut Chart)"
             android:theme="@style/Theme._157LabLearnAndroid" />
 
+        <activity
+            android:name=".Part4Activity"
+            android:exported="false"
+            android:label="Swipe-to-Dismiss To-Do List"
+            android:theme="@style/Theme._157LabLearnAndroid" />
+
+        <activity
+            android:name=".Part5Activity"
+            android:exported="false"
+            android:label="Side Effects Lab (Part 5)"
+            android:theme="@style/Theme._157LabLearnAndroid" />
+
+        <activity
+            android:name=".Part6Activity"
+            android:exported="false"
+            android:label="WebView Lab (Part 6)"
+            android:theme="@style/Theme._157LabLearnAndroid" />
+
     </application>
 
 </manifest>
